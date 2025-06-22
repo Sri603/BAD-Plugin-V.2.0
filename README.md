@@ -1,24 +1,24 @@
-# 🔥 BAD 2.0 - Burned Area Detector Plugin for QGIS
+## 🔧 Key Features
 
-**BAD (Burned Area Detector)** is a free and open-source QGIS plugin designed to detect and validate wildfire-affected regions using multispectral Sentinel-2 imagery. This plugin enhances the accuracy of burned area mapping through preprocessing, region growing, burn severity classification, and validation tools.
+The BAD 2.0 plugin introduces major enhancements over the original version to streamline the workflow of burned area detection and validation. These include:
 
----
+- **🎯 SCL Band Masking**  
+  Perform masking of unwanted Scene Classification Layer (SCL) classes from Sentinel-2 imagery for both pre-fire and post-fire datasets. This removes noise (e.g., clouds, water, snow) and improves classification accuracy.
 
-## 🌍 Key Features
+- **🛰️ OWA Layer Preview**  
+  Visually inspect Ordered Weighted Averaging (OWA) layers to help select optimal threshold values for generating seed and grow layers. An interactive preview allows accurate threshold tuning using real-time image feedback.
 
-- **Preprocessing Tool**: Mask unwanted classes from the Sentinel-2 Scene Classification Layer (SCL) to reduce error and improve analysis.
-- **Feature Extraction**: Automatically computes features and membership degrees using fuzzy logic.
-- **OWA Aggregation**: Integrates multiple indicators with Ordered Weighted Averaging (OWA) for burned area evidence.
-- **Region Growing**: Interactive segmentation algorithm based on user-defined thresholds.
-- **Burn Severity Mapping**: Supports dNBR-based classification with 7 severity levels.
-- **Validation Tools**: Includes confusion matrix, accuracy metrics, and agreement map generation using reference data.
-- **QGIS Integrated**: Seamlessly runs inside the QGIS environment with a user-friendly PyQt interface.
+- **✅ Burned Area Map Validation**  
+  Validate the burned area output by comparing with reference data using a confusion matrix. Compute accuracy metrics such as commission/omission errors, Dice coefficient, and generate a pixel-wise **Agreement Map**.
 
----
+- **🔥 Burn Severity Validation**  
+  Validate burn severity output by reclassifying and comparing the severity layer with reference data, including full error matrix evaluation and export of metrics for reporting.
 
-## 🚀 Getting Started
+- **📦 Modular Workflow**  
+  Each tab in the plugin works independently—users can start at any stage (e.g., OWA, Region Growing) using intermediate inputs, enhancing flexibility and efficiency.
 
-1. **Install QGIS**: https://qgis.org/en/site/forusers/download.html
-2. **Clone this Repository**:
-   ```bash
-   git clone https://github.com/yourusername/BAD-Plugin.git
+- **📊 Export of Validation Results**  
+  All validation results, including accuracy metrics and confusion matrices, are exportable in `.html` format for inclusion in reports or publications.
+
+- **🌐 QGIS Native**  
+  Fully integrated within the QGIS environment with a PyQt-based graphical interface and support for native raster and vector operations.
